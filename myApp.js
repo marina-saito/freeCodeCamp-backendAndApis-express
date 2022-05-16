@@ -28,7 +28,7 @@ app.get('/json', function(_req, res) {
 });
 
 app.get('/now', function(req, _res, next) {
-	req.time = new Date().toString();
+	req.time = new Date().toUTCString();
 	next();
 }, function(req, res) {
 	res.json({
